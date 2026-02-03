@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import RotatingText from './RotatingText';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,9 +31,27 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* LOGO */}
-        <a href="#home" className="text-2xl font-bold text-white tracking-wide">
-          Yusdi<span className="text-blue-500">Fathudin</span>.
-        </a>
+        <a 
+        href="#home" 
+        className="flex items-center gap-1 text-2xl font-bold text-white tracking-wide"
+      >
+        Yusdi
+        
+        <RotatingText 
+          texts={['Fathudin.', '.dev']} 
+          mainClassName="inline-flex items-center text-blue-500 overflow-hidden"
+          
+          staggerFrom={"last"} 
+          initial={{ y: "100%" }} 
+          animate={{ y: 0 }} 
+          exit={{ y: "-120%" }} 
+          staggerDuration={0.025} 
+          splitLevelClassName="overflow-hidden pb-0.5" 
+          transition={{ type: "spring", damping: 30, stiffness: 400 }} 
+          rotationInterval={10000}
+        />
+        {/* <span className="text-blue-500">.</span> */}
+      </a>
 
         {/* DESKTOP MENU */}
         <div className="hidden md:flex items-center space-x-8">
