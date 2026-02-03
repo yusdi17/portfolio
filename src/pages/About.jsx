@@ -1,7 +1,8 @@
 import React from 'react';
 import { 
-  Code, Server, Cpu, // Icon Expertise
-  GraduationCap, Briefcase, Award, CheckCircle2, CircleDashed, ArrowRight 
+  Code, Server, Cpu,
+  GraduationCap, Briefcase, Award, CheckCircle2, CircleDashed, ArrowRight,
+  Atom, Database, Palette, Globe, Terminal, GitBranch, PenTool, Layers, Video, Clapperboard, Wifi, Box
 } from 'lucide-react';
 
 const About = () => {
@@ -52,6 +53,21 @@ const About = () => {
     }
   ];
 
+  const techStack = [
+    { name: "React", category: "Frontend Lib", icon: <Atom />, color: "text-cyan-400" },
+    { name: "Laravel", category: "PHP Framework", icon: <Globe />, color: "text-red-500" },
+    { name: "Tailwind", category: "CSS Framework", icon: <Palette />, color: "text-teal-400" },
+    { name: "MySQL", category: "Database", icon: <Database />, color: "text-blue-500" },
+    { name: "Git / GitHub", category: "Version Control", icon: <GitBranch />, color: "text-white" },
+    { name: "Docker", category: "Container", icon: <Box />, color: "text-blue-400" },
+    { name: "VS Code", category: "Code Editor", icon: <Terminal />, color: "text-blue-500" },
+    { name: "Figma", category: "UI Design", icon: <PenTool />, color: "text-purple-400" },
+    { name: "Photoshop", category: "Image Editing", icon: <Layers />, color: "text-blue-600" },
+    { name: "Premiere", category: "Video Editing", icon: <Video />, color: "text-purple-500" },
+    { name: "After Effects", category: "Motion VFX", icon: <Clapperboard />, color: "text-indigo-400" },
+    { name: "OBS Studio", category: "Streaming", icon: <Wifi />, color: "text-gray-300" },
+  ];
+
   return (
     <section id="about"  className="min-h-screen flex items-center pt-20 md:pt-0">
        {/* Background Glow */}
@@ -62,7 +78,7 @@ const About = () => {
         
         {/* === BAGIAN 1: EXPERTISE === */}
         <div className="mb-32">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 tracking-tight">
             Keahlian & <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Ekspertise</span>
           </h2>
 
@@ -89,7 +105,7 @@ const About = () => {
         {/*ROADMAP */}
         <div className="relative">
           <div className="text-center mb-16">
-             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
               Perjalanan <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Karir</span>
             </h2>
           </div>
@@ -101,7 +117,6 @@ const About = () => {
             
             {/* GARIS KIRI MOBILE */}
             <div className="md:hidden absolute left-8 top-0 bottom-0 w-0.5 bg-gray-800"></div>
-
             <div className="space-y-12 md:space-y-0">
               {roadmapData.map((item, index) => {
                 const isEven = index % 2 === 0;
@@ -154,6 +169,37 @@ const About = () => {
           </div>
         </div>
 
+        <div className="relative mt-16">
+          <div className="text-center mb-12">
+             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+              Creative & <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Tech Stack</span>
+            </h2>
+            <div className="h-1 w-20 bg-purple-500/50 rounded-full mx-auto"></div>
+          </div>
+
+          {/* GRID LAYOUT: 2 kolom di HP, 4 di Tablet, 6 di Desktop */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {techStack.map((tech, index) => (
+              <div 
+                key={index} 
+                className="flex flex-col items-center justify-center p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-purple-500/30 hover:-translate-y-1 transition-all duration-300 group cursor-default"
+              >
+                {/* ICON DENGAN WARNA */}
+                <div className={`mb-3 ${tech.color} group-hover:scale-110 transition-transform`}>
+                  {React.cloneElement(tech.icon, { size: 32 })}
+                </div>
+                
+                {/* NAMA TECH */}
+                <h4 className="font-semibold text-white text-sm">{tech.name}</h4>
+                
+                {/* KATEGORI */}
+                <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider mt-1">
+                  {tech.category}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
