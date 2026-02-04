@@ -6,6 +6,7 @@ import About from './pages/About'
 import SplashCursor from './components/SplashCursor'
 import Projects from './components/ProjectCard'
 import Contact from './pages/Contact'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
         <Projects />
         <Contact />
       </main>
+
+      <Footer/>
     </div>
   )
 }

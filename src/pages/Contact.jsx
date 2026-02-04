@@ -1,144 +1,161 @@
 import React from 'react';
-import { Mail, MapPin, Send, Github, Linkedin, Instagram } from 'lucide-react';
+import { Mail, MessageSquare, Send, Wifi, Terminal, ArrowUpRight } from 'lucide-react';
+import Lanyard from '@/components/Lanyard';
 
 const Contact = () => {
   return (
-    <section id="contact" className="min-h-screen flex items-center pt-20 md:pt-0">
+    <section id="contact" className="w-full py-24 bg-[#0a0a0a] text-white relative overflow-hidden">
       
-      {/* Background Glow (Sama seperti section lain agar konsisten) */}
+      {/* Background Glow (Konsisten dengan section lain) */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-teal-900/20 rounded-full blur-[120px] -translate-y-1/2 -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] -z-10"></div>
-
+      
       <div className="container mx-auto px-6 md:px-12">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        {/* HEADER SECTION */}
+        <div className="text-center mb-16">
+           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            Mari <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Terhubung</span>
+          </h2>
+          <p className="text-gray-400 max-w-xl mx-auto">
+            Saya selalu terbuka untuk proyek baru atau sekadar obrolan teknologi. Kirimkan sinyal Anda.
+          </p>
+        </div>
+
+        {/* MAIN TERMINAL CARD */}
+        <div className="max-w-5xl mx-auto bg-[#0f0f0f] border border-white/10 rounded-3xl overflow-hidden shadow-2xl shadow-teal-900/20 flex flex-col md:flex-row">
           
-          {/* KOLOM KIRI: Informasi Kontak */}
-          <div>
-            <h4 className="text-teal-400 font-semibold tracking-widest text-sm uppercase mb-4">
-              Kontak
-            </h4>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Mari Bekerja <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
-                Sama.
-              </span>
-            </h2>
-            <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-md">
-              Punya ide proyek menarik atau ingin berdiskusi tentang teknologi? Jangan ragu untuk menghubungi saya. Saya selalu terbuka untuk peluang baru.
-            </p>
+          {/* === KOLOM KIRI: SYSTEM STATUS & INFO === */}
+          <div className="w-full md:w-5/12 p-8 md:p-10 bg-[#111] border-r border-white/5 flex flex-col justify-between relative">
+            
+            <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
 
-            {/* List Detail Kontak */}
-            <div className="space-y-6 mb-12">
-              
-              {/* Email */}
-              <div className="flex items-center gap-4 group">
-                <div className="p-3 rounded-full bg-white/5 border border-white/10 text-teal-400 group-hover:bg-teal-500 group-hover:text-black transition-all duration-300">
-                  <Mail size={22} />
-                </div>
-                <div>
-                  <h5 className="text-sm text-gray-400 mb-1">Email</h5>
-                  <p className="font-medium text-white group-hover:text-teal-400 transition-colors">
-                    email.anda@example.com
-                  </p>
-                </div>
-              </div>
-
-              {/* Lokasi */}
-              <div className="flex items-center gap-4 group">
-                <div className="p-3 rounded-full bg-white/5 border border-white/10 text-teal-400 group-hover:bg-teal-500 group-hover:text-black transition-all duration-300">
-                  <MapPin size={22} />
-                </div>
-                <div>
-                  <h5 className="text-sm text-gray-400 mb-1">Lokasi</h5>
-                  <p className="font-medium text-white group-hover:text-teal-400 transition-colors">
-                    Jakarta, Indonesia
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Social Links */}
+            {/* 1. System Status */}
             <div>
-              <h5 className="text-sm text-gray-500 mb-4 font-semibold uppercase tracking-wider">Ikuti Saya</h5>
-              <div className="flex gap-4">
-                <a href="#" className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-teal-500 hover:text-teal-400 transition-all">
-                  <Github size={20} />
-                </a>
-                <a href="#" className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-blue-500 hover:text-blue-400 transition-all">
-                  <Linkedin size={20} />
-                </a>
-                <a href="#" className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-pink-500 hover:text-pink-400 transition-all">
-                  <Instagram size={20} />
-                </a>
+              <div className="flex items-center gap-3 mb-8">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
+                </span>
+                <span className="text-xs font-mono font-bold tracking-widest text-teal-400">
+                  SYSTEM STATUS: ONLINE
+                </span>
+              </div>
+
+              {/* Contact Cards */}
+              <div className="space-y-4">
+                
+                {/* Email Card */}
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-teal-500/50 transition-all group">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 rounded-lg bg-teal-500/10 text-teal-400 group-hover:bg-teal-500 group-hover:text-black transition-colors">
+                      <Mail size={20} />
+                    </div>
+                    <div>
+                      <h5 className="text-[10px] text-gray-500 uppercase tracking-wider font-bold mb-1">Email Me</h5>
+                      <a href="mailto:email@anda.com" className="text-sm font-mono text-gray-200 hover:text-white block">
+                        yusdi@example.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* WhatsApp Card */}
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/50 transition-all group">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 rounded-lg bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-black transition-colors">
+                      <MessageSquare size={20} />
+                    </div>
+                    <div>
+                      <h5 className="text-[10px] text-gray-500 uppercase tracking-wider font-bold mb-1">Chat WhatsApp</h5>
+                      <a href="https://wa.me/62812345678" target="_blank" rel="noreferrer" className="text-sm font-mono text-gray-200 hover:text-white block">
+                        +62 812 3456 7890
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
+
+            {/* 2. Bottom Uplink Animation */}
+            <div className="mt-12 md:mt-0 pt-8 border-t border-dashed border-white/10">
+              <div className="flex items-center gap-3 text-gray-600">
+                <Wifi size={16} className="animate-pulse" />
+                <span className="text-[10px] font-mono tracking-widest uppercase animate-pulse">
+                  ESTABLISHING SECURE UPLINK...
+                </span>
+              </div>
+            </div>
+
           </div>
 
-          {/* KOLOM KANAN: Form Input */}
-          <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm relative">
-             {/* Hiasan kecil di pojok form */}
-             <div className="absolute top-0 right-0 p-4 opacity-20">
-                <Send size={100} className="text-teal-500 -rotate-12" />
-             </div>
+          {/* === KOLOM KANAN: FORM TRANSMISI === */}
+          <div className="w-full md:w-7/12 p-8 md:p-10 bg-gradient-to-br from-[#151515] to-[#0a0a0a]">
+            
+            <div className="flex items-center gap-2 mb-8 text-white/80">
+              <Terminal size={18} className="text-teal-500" />
+              <h3 className="text-sm font-bold font-mono tracking-wider uppercase">
+                INITIATE DATA TRANSMISSION
+              </h3>
+            </div>
 
-            <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Input Nama */}
-                <div className="space-y-2">
-                  <label className="text-sm text-gray-400 ml-1">Nama</label>
-                  <input 
-                    type="text" 
-                    placeholder="Nama Lengkap" 
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-all"
-                  />
-                </div>
-                
-                {/* Input Email */}
-                <div className="space-y-2">
-                  <label className="text-sm text-gray-400 ml-1">Email</label>
-                  <input 
-                    type="email" 
-                    placeholder="email@anda.com" 
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-all"
-                  />
-                </div>
-              </div>
-
-              {/* Input Subject */}
-              <div className="space-y-2">
-                <label className="text-sm text-gray-400 ml-1">Subjek</label>
+              {/* Input ID / Nama */}
+              <div className="space-y-2 group">
+                <label className="text-xs font-mono text-gray-500 group-focus-within:text-teal-400 transition-colors">
+                  ID PENGIRIM / NAMA
+                </label>
                 <input 
                   type="text" 
-                  placeholder="Tawaran Proyek / Pertanyaan" 
-                  className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-all"
+                  className="w-full bg-transparent border-b border-white/10 px-0 py-3 text-white font-mono placeholder-gray-700 focus:outline-none focus:border-teal-500 transition-all"
+                  placeholder="Masukkan identitas Anda..."
                 />
               </div>
 
-              {/* Input Pesan */}
-              <div className="space-y-2">
-                <label className="text-sm text-gray-400 ml-1">Pesan</label>
+              {/* Input Email / Frekuensi */}
+              <div className="space-y-2 group">
+                <label className="text-xs font-mono text-gray-500 group-focus-within:text-teal-400 transition-colors">
+                  FREKUENSI KOMUNIKASI (EMAIL)
+                </label>
+                <input 
+                  type="email" 
+                  className="w-full bg-transparent border-b border-white/10 px-0 py-3 text-white font-mono placeholder-gray-700 focus:outline-none focus:border-teal-500 transition-all"
+                  placeholder="alamat@email.com"
+                />
+              </div>
+
+              {/* Input Pesan / Data Transmisi */}
+              <div className="space-y-2 group">
+                <label className="text-xs font-mono text-gray-500 group-focus-within:text-teal-400 transition-colors">
+                  DATA TRANSMISI PESAN
+                </label>
                 <textarea 
                   rows="4"
-                  placeholder="Tuliskan pesan Anda di sini..." 
-                  className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-all resize-none"
+                  className="w-full bg-white/5 rounded-lg border border-white/10 p-4 text-white font-mono placeholder-gray-700 focus:outline-none focus:border-teal-500 focus:bg-white/[0.07] transition-all resize-none"
+                  placeholder="Ketik pesan terenkripsi Anda di sini..."
                 ></textarea>
               </div>
 
-              {/* Tombol Kirim */}
+              {/* Tombol Aksi */}
               <button 
                 type="submit"
-                className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-400 hover:to-blue-500 text-white font-bold text-lg shadow-lg shadow-teal-500/20 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                className="w-full group relative overflow-hidden py-4 bg-teal-600 hover:bg-teal-500 text-black font-bold font-mono uppercase tracking-wider transition-all"
               >
-                Kirim Pesan <Send size={20} />
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Inisiasi Transmisi <ArrowUpRight size={18} />
+                </span>
+                
+                {/* Hover Effect Glare */}
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               </button>
 
             </form>
+
           </div>
 
         </div>
+
       </div>
     </section>
   );
