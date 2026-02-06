@@ -7,6 +7,7 @@ import SplashCursor from './components/SplashCursor'
 import Projects from './components/ProjectCard'
 import Contact from './pages/Contact'
 import Footer from './components/Footer'
+import GithubStats from './components/GithubStats'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <GithubStats />
         <Projects />
         <Contact />
       </main>
