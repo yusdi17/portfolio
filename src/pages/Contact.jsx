@@ -4,7 +4,7 @@ import Lanyard from '@/components/Lanyard';
 
 const Contact = () => {
   return (
-    <section id="contact" className="w-full py-24 bg-[#0a0a0a] text-white relative overflow-hidden">
+    <section id="contact" className="w-full py-24  text-white relative overflow-hidden">
       
       {/* Background Glow (Konsisten dengan section lain) */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-teal-900/20 rounded-full blur-[120px] -translate-y-1/2 -z-10"></div>
