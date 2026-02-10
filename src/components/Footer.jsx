@@ -3,7 +3,7 @@ import { Github, Linkedin, Instagram, Heart } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black text-white border-t border-white/10 pt-16 pb-8">
+    <footer className=" text-white border-t border-white/10 pt-16 pb-8">
       <div className="container mx-auto px-6 md:px-12">
         
         {/* BAGIAN ATAS: Logo & Navigasi */}
