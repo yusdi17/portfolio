@@ -65,7 +65,6 @@ const About = () => {
     { name: "Photoshop", category: "Image Editing", icon: <Layers />, color: "text-blue-600" },
     { name: "Premiere", category: "Video Editing", icon: <Video />, color: "text-purple-500" },
     { name: "After Effects", category: "Motion VFX", icon: <Clapperboard />, color: "text-indigo-400" },
-    { name: "OBS Studio", category: "Streaming", icon: <Wifi />, color: "text-gray-300" },
   ];
 
   return (
