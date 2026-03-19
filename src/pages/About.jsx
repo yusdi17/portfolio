@@ -64,7 +64,7 @@ const About = () => {
     { name: "Figma", category: "UI Design", icon: <PenTool />, color: "text-purple-400" },
     { name: "Photoshop", category: "Image Editing", icon: <Layers />, color: "text-blue-600" },
     { name: "Premiere", category: "Video Editing", icon: <Video />, color: "text-purple-500" },
-    { name: "After Effects", category: "Motion VFX", icon: <Clapperboard />, color: "text-indigo-400" },
+    // { name: "After Effects", category: "Motion VFX", icon: <Clapperboard />, color: "text-indigo-400" },
   ];
 
   return (
