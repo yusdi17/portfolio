@@ -157,7 +157,7 @@ function Band({ maxSpeed = 50, minSpeed = 10, isMobile = false }) {
             lineWidth={0.5} 
             transparent
             opacity={0.8}
-        />
+        /> 
       </mesh>
     </>
   );
